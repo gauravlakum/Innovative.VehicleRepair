@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Innovative.VehicleRepair.Application.Data;
 using Innovative.VehicleRepair.Application.Enums;
 using Innovative.VehicleRepair.Application.Models;
 using Innovative.VehicleRepair.Application.Repositories;
@@ -72,6 +73,54 @@ namespace Innovative.VehicleRepair.Application.Tests
             //assert
             Assert.AreEqual(orderStatusToReturn, result);
         }
+
+        [Test]
+        public void ProcessProcessOrderV2_WhenRuleFoundForSpecifiedInputs_shouldReturnFoundRuleStatus()
+        {
+            //arrange
+            var orderStatusToReturn = OrderStatus.Closed;
+            var orderRuleToReturn = new OrderRuleV2() { OrderStatus = orderStatusToReturn };
+            var orderRulesToReturn = new List<OrderRuleV2>
+            {
+                orderRuleToReturn
+            };
+
+            _ruleRepository.GetRuleV2(Arg.Any<OrderInput>()).Returns(orderRulesToReturn);
+
+            //act
+            var result = _sut.ProcessOrderV2(new OrderInput
+            {
+                IsLargeOrder = true,
+                IsNewCustomer = true,
+                IsRushOrder = false,
+                OrderType = OrderType.Repair
+            });
+
+            //assert
+            Assert.AreEqual(orderStatusToReturn, result);
+        }
+        [Test]
+        public void ProcessOrderV2_WhenRuleNotFoundForSpecifiedInputs_shouldReturnConfirmStatus()
+        {
+            //arrange
+            var orderStatusToReturn = OrderStatus.Confirmed;
+            var orderRulesToReturn = new List<OrderRuleV2>();
+
+            _ruleRepository.GetRuleV2(Arg.Any<OrderInput>()).Returns(orderRulesToReturn);
+
+            //act
+            var result = _sut.ProcessOrderV2(new OrderInput
+            {
+                IsLargeOrder = true,
+                IsNewCustomer = true,
+                IsRushOrder = false,
+                OrderType = OrderType.Repair
+            });
+
+            //assert
+            Assert.AreEqual(orderStatusToReturn, result);
+        }
+
 
     }
 }

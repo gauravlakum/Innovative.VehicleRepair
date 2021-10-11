@@ -19,5 +19,11 @@ namespace Innovative.VehicleRepair.Application.Services
             var rule =  _ruleRepository.GetRule(orderInput).FirstOrDefault();
             return rule?.OrderStatus ?? OrderStatus.Confirmed;
         }
+        
+        public OrderStatus ProcessOrderV2(OrderInput orderInput)
+        {
+            var rule =  _ruleRepository.GetRuleV2(orderInput).FirstOrDefault();
+            return rule?.OrderStatus ?? OrderStatus.Confirmed;
+        }
     }
 }

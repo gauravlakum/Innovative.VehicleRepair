@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Innovative.VehicleRepair.Application.Data;
 using Innovative.VehicleRepair.Application.Enums;
 using Innovative.VehicleRepair.Application.Models;
 
@@ -11,5 +12,6 @@ namespace Innovative.VehicleRepair.Application.Repositories
     public interface IRuleRepository
     {
         List<OrderRule> GetRule(OrderInput input);
+        List<OrderRuleV2> GetRuleV2(OrderInput input);
     }
 }

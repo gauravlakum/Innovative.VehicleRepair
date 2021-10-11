@@ -48,7 +48,7 @@ namespace Innovative.VehicleRepair.Application
                 await _outputHandler.DisplayNewCustomerInputMessage();
                 var isNewCustomer = await _inputHandler.GetIsNewCustomerInput();
 
-                var orderStatus = _orderService.ProcessOrder(new OrderInput
+                var orderStatus = _orderService.ProcessOrderV2(new OrderInput
                 {
                     IsRushOrder = isRushOrder,
                     OrderType = orderType,

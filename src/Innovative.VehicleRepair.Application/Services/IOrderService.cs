@@ -6,5 +6,6 @@ namespace Innovative.VehicleRepair.Application.Services
     public interface IOrderService
     {
         OrderStatus ProcessOrder(OrderInput orderInput);
+        OrderStatus ProcessOrderV2(OrderInput orderInput);
     }
 }

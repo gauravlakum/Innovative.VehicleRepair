@@ -46,6 +46,30 @@ namespace Innovative.VehicleRepair.Application.Tests
             Assert.IsTrue(!result.Any());
         }
 
+        [TestCaseSource(typeof(OrderRuleTestCaseFactory), nameof(OrderRuleTestCaseFactory.OrderRuleCases))]
+        public void GetRuleV2_WhenMatchingInputProvided_ShouldReturnRelevantRule(OrderInput input, IList<OrderRule> output)
+        {
+            //Act
+            var result = _sut.GetRuleV2(input);
+
+            //assert
+            Assert.AreEqual(result.First().IsNewCustomer, output.First().IsNewCustomer);
+            Assert.AreEqual(result.First().IsRushOrder, output.First().IsRushOrder);
+            Assert.AreEqual(result.First().IsLargeOrder, output.First().IsLargeOrder);
+            Assert.AreEqual(result.First().OrderType, output.First().OrderType);
+            Assert.AreEqual(result.First().OrderStatus, output.First().OrderStatus);
+        }
+
+        [TestCaseSource(typeof(OrderRuleTestCaseFactory), nameof(OrderRuleTestCaseFactory.DefaultRuleCase))]
+        public void GetRuleV2_WhenNoMatchingInputProvided_ShouldNotReturnAnyRule(OrderInput input, IList<OrderRule> output)
+        {
+            //act
+            var result = _sut.GetRuleV2(input);
+
+            //assert
+            Assert.IsTrue(!result.Any());
+        }
+
         private class OrderRuleTestCaseFactory
         {
             public static IEnumerable OrderRuleCases

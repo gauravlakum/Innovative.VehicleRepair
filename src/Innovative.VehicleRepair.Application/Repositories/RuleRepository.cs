@@ -18,5 +18,16 @@ namespace Innovative.VehicleRepair.Application.Repositories
 
 
         }
+
+        public List<OrderRuleV2> GetRuleV2(OrderInput input)
+        {
+            return RuleEngineV2.OrderRules.Where(rule => rule.IsLargeOrder == input.IsLargeOrder &&
+                                                       rule.IsNewCustomer == input.IsNewCustomer &&
+                                                       rule.IsRushOrder == input.IsRushOrder &&
+                                                       rule.OrderType == input.OrderType).OrderBy(rule => rule.Priority)
+                .ToList();
+
+
+        }
     }
 }
