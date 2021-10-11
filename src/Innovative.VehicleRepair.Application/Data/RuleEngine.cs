@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Formats.Asn1;
-using System.Reflection;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
+using Innovative.VehicleRepair.Application.Enums;
 using Innovative.VehicleRepair.Application.Models;
 
-namespace Innovative.VehicleRepair.Application.Enums
+namespace Innovative.VehicleRepair.Application.Data
 {
     public class RuleEngine
     {
