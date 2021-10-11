@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.VehicleRepair.Application", "Innovative.VehicleRepair.Application\Innovative.VehicleRepair.Application.csproj", "{56B2964D-FD62-43D3-B2EB-5725F2927D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.VehicleRepair.Application.Tests", "Innovative.VehicleRepair.Application.Tests\Innovative.VehicleRepair.Application.Tests.csproj", "{E35399A9-3CA4-4E4B-AE76-681B8BF09CC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56B2964D-FD62-43D3-B2EB-5725F2927D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B2964D-FD62-43D3-B2EB-5725F2927D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B2964D-FD62-43D3-B2EB-5725F2927D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B2964D-FD62-43D3-B2EB-5725F2927D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35399A9-3CA4-4E4B-AE76-681B8BF09CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35399A9-3CA4-4E4B-AE76-681B8BF09CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35399A9-3CA4-4E4B-AE76-681B8BF09CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35399A9-3CA4-4E4B-AE76-681B8BF09CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75A4295D-A1DE-4174-85FD-F3A39C16228A}
+	EndGlobalSection
+EndGlobal

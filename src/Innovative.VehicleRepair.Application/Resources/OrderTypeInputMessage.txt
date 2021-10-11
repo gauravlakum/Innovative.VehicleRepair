@@ -1,0 +1,7 @@
+Order Type ( R,H or N): 
+Key:        { 'R', OrderType.Repair },
+            { 'H', OrderType.Hire },
+            { 'A', OrderType.All }, 
+            { 'r', OrderType.Repair },
+            { 'h', OrderType.Hire },
+            { 'a', OrderType.All }
